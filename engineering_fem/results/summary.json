@@ -1,0 +1,20 @@
+{
+  "status": "SIMULATED \u2014 ILLUSTRATIVE INPUTS \u2014 NO EXPERIMENTAL VALIDATION",
+  "model": "1-D composite Euler-Bernoulli beam finite elements, Hermite cubic, consistent mass",
+  "n_elements_final": 80,
+  "bare_analytical_f1_hz": 81.66254758489153,
+  "bare_FE_f1_hz": 81.66253750463294,
+  "composite_FE_frequencies_hz": [
+    109.76325317623345,
+    543.523360138634,
+    1466.2376653348852,
+    2897.799783945321
+  ],
+  "composite_static_tip_deflection_um_at_peak_voltage": -37.14626529328849,
+  "composite_peak_FRF_frequency_hz": 109.5,
+  "composite_peak_FRF_amplitude_um": 900.4633123431597,
+  "convergence_80_to_160_relative_f1": 2.2441382245830255e-06,
+  "convergence_80_to_160_relative_static_tip": 1.4489429656094899e-09,
+  "contains_no_real_ASC_dimensions_or_control_settings": true,
+  "model_is_not_SAW_piezo_multiphysics": true
+}

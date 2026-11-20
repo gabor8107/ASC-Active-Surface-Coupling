@@ -1,2 +1,71 @@
-# ASC-Active-Surface-Coupling
-Public research materials, conceptual architecture and reproducible S1 numerical examples for Active Surface Coupling (ASC)
+# ASC S1 — Public Research Package v0.2.2 (release candidate)
+
+**Active Surface Coupling (ASC): preliminary numerical benchmarks and measurement-planning resources**  
+**Concept author:** P. Gabor · Independent researcher, Hungary  
+**Prepared:** 20 November 2026 · **Companion to ASC Preprint 0.2**  
+**Release status:** PUBLICATION CANDIDATE — author approval, IP review, license decision and final archive check outstanding.
+
+> **Scope and evidence boundary.** The repository contains architectural discussion, a **hypothetical** one-dimensional beam FEM benchmark and **synthetic** mathematical demonstrations. It contains **no ASC hardware measurements or experimentally validated system model**. No thrust, propulsion effect, coupling advantage, RF efficiency or vehicle performance is claimed. ASC is **separate from the author's QRUM research programme**.
+
+## What is inside
+
+| Path | Content | Evidentiary status |
+| --- | --- | --- |
+| `preprint/ASC_Preprint_0.2_Full_Public_Summary_28p.pdf` | Revised complete 28-page English ASC Preprint 0.2: corrected ASC-003 on page 8, plain-English disclosure on page 27 and GitHub numerical note on page 2 | **Concept / proposal**, not validation |
+| `drawings/` | Three separately supplied conceptual PNG images, ASC-001 to ASC-003, matching Figures 1–3 on pages 6–8 of the preprint | **AI-assisted visual studies**, not verified drawings |
+| `preprint/ASC_S1_Overview_2p.pdf` | Two-page S1-oriented summary previously packaged as a Preprint 0.2 PDF; preserved separately to avoid confusing it with the full 28-page paper | Companion overview; **not the full preprint** |
+| `engineering_fem/` | Executable 1-D Euler–Bernoulli composite cantilever benchmark; `run_fem.py`, config, unit tests, CSVs, plots and six-page technical note | Numerical example with deliberately **illustrative** dimensions and materials |
+| `synthetic_demo/` | Reproducible normalized damped-oscillator comparison and idealized 24-channel phasor-coherence Monte Carlo | **Synthetic**, dimensionless tests of analysis/plotting workflow; **not FEM** |
+| `REPRODUCIBILITY.md` | Verification checks, numerical tolerances, and rerun instructions | Computing transparency, not laboratory validation |
+| `PREPUBLICATION_CHECKLIST.md` | Decisions to close before a public release | Editorial and IP checks |
+
+**Do not mix the results of the two numerical folders.** The FEM calculates low-frequency *cantilever bending* under assumed geometry, elastic properties, bonding and voltage. The synthetic demo uses arbitrary normalized frequency and independent random phase errors. Neither computes high-frequency SAW fields, 2-D/3-D shell behavior or propulsion.
+
+## What S1 means here
+
+The **full 28-page preprint** defines S1 broadly as a *flat-specimen measurement and verification stage*: it calls for calibrated displacement/phase measurements, repeatability checks and comparison against a direct-drive reference. The present FEM beam is **one preliminary numerical exercise that may help plan part of S1**, not the specified or experimentally validated ASC specimen. The two-page overview narrows the discussion to that example; it does not supersede the full preprint's scope.
+
+## Quick start
+
+Python 3.10+ is recommended. Run the FEM package first:
+
+```bash
+cd engineering_fem
+python -m pip install -r requirements.txt
+python run_fem.py
+python -m unittest discover -s tests -v
+```
+
+The FEM calculations save CSV, JSON and PNG files to `engineering_fem/results/`. To run the separate synthetic demonstration:
+
+```bash
+cd ../synthetic_demo
+python run_simulation.py
+```
+
+See each folder's `README.md`, `engineering_fem/public_config.json`, and `REPRODUCIBILITY.md`. The test suite checks five internal properties of the mechanical code; it **does not independently validate the model against ASC experiments**.
+
+## Explicit non-claims
+
+- **No ASC prototype or laboratory data** are supplied; modeled/simulated results must not be called observed or measured.
+- **No SAW multiphysics, RF power/thermal model, or full piezoelectric field solution** is presented.
+- **No performance advantage, force, drag reduction, reactionless thrust or operational vehicle design** is demonstrated.
+- **No build-ready fabrication drawings, control firmware, real ASC operating settings or manufacturing tolerances** are supplied in this package.
+- Published generic illustrative inputs must **not** be assumed to match a future physical ASC implementation.
+- Model mesh convergence and an analytical bare-beam frequency comparison are **numerical verification**, not experimental validation.
+
+## AI assistance and provenance
+
+The ASC concept and research direction are credited to **P. Gabor**. Example Python code, report language and visual materials were prepared with AI assistance. Numerical plots and CSVs were generated by executing the included code. AI participation does not constitute independent peer review. All scientific claims, configurations, references, and figures should receive author review before publication.
+
+## Licensing and reuse
+
+**No software or data license has been selected for this release candidate.** Public access does not itself grant permission to reuse, redistribute, or modify copyrighted materials. Before describing the package as *open source*, select and include a suitable license for the code and explicitly state any separate permissions for text, figures and data. Patent/public-disclosure consequences should be reviewed **before** public posting if protection may be sought.
+
+## How to cite
+
+Refer to the **full ASC Preprint 0.2 as a concept proposal** and the numerical package separately as **ASC S1 Public Research Package v0.2.2**. No DOI is claimed in this draft. Update citation metadata with a valid Zenodo release DOI once assigned. Neither source should be cited as evidence of propulsion or an experimentally operating ASC device.
+
+## Release scope
+
+The manifest lists all distributed files **except `MANIFEST_SHA256.txt` itself**. The separate private implementation dossier (>1,000 pages, including a 1,046-page compiled edition) is not included. Nor are private electrical schematics, operating parameters, internal CAD, manufacturing tolerances or fabrication instructions. The public drawings were made with generative-AI assistance from the author's concept references and do not imply physical validation. Check the manifest and archives before publishing. GitHub and Zenodo publication must be approved by the author.

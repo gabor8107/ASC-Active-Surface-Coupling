@@ -1,0 +1,29 @@
+{
+  "simulation_notice": "All parameters are public illustrative choices, not private ASC design values",
+  "specimen": {
+    "length_m": 0.1,
+    "width_m": 0.02,
+    "patch_end_m": 0.06,
+    "mounting": "Left x=0 end clamped, right end free"
+  },
+  "substrate": {
+    "label": "Illustrative aluminum 6061-T6",
+    "thickness_m": 0.001,
+    "E_Pa": 69000000000.0,
+    "rho_kg_m3": 2700.0,
+    "source": "ASM MatWeb (typical values), https://asm.matweb.com/search/SpecificMaterial.asp?bassnum=MA6061T6"
+  },
+  "piezo": {
+    "label": "Illustrative PZT-5A-like isotropic elastic surrogate, not full piezo constitutive matrix",
+    "thickness_m": 0.0003,
+    "E_Pa": 56000000000.0,
+    "rho_kg_m3": 7600.0,
+    "d31_m_V": -1.75e-10,
+    "source": "Representative piezo values only; see https://doi.org/10.3390/s20144051 and https://pmc.ncbi.nlm.nih.gov/articles/PMC12566301/; not tied to a chosen vendor batch"
+  },
+  "excitation": {
+    "voltage_peak_V": 20.0,
+    "modal_damping_ratio": 0.02,
+    "piezoelectric_representation": "uniform equivalent free strain d31*V/tp in bonded patch, neglecting electrical dynamics and back-coupling"
+  }
+}

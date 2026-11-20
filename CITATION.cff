@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "Please cite the ASC S1 numerical package as a preliminary computational release; do not cite as experimental validation."
+title: "ASC S1: Public Research Package"
+version: "0.2.2"
+authors:
+  - name: "P. Gabor"
+type: software
+abstract: "Preliminary and illustrative numerical materials accompanying ASC Preprint 0.2: a 1-D cantilever FEM benchmark and separate normalized synthetic demonstrations. No physical validation or propulsion result."
