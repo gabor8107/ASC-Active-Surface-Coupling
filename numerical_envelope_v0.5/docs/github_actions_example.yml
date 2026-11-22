@@ -1,0 +1,30 @@
+name: ASC numerical envelope v0.4 checks
+on:
+  push:
+    paths:
+      - 'numerical_envelope_v0.4/**'
+      - '.github/workflows/asc-numerical-envelope.yml'
+  workflow_dispatch:
+jobs:
+  verification:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install public requirements
+        run: python -m pip install -r numerical_envelope_v0.4/requirements.txt
+      - name: Unit tests
+        working-directory: numerical_envelope_v0.4
+        run: python -m unittest discover -s tests -v
+      - name: Regenerate public results and figures
+        working-directory: numerical_envelope_v0.4
+        run: python run_analysis.py
+      - name: Check deterministic outputs within this runner
+        working-directory: numerical_envelope_v0.4
+        run: |
+          sha256sum results/summary.json > /tmp/asc-summary-first.sha256
+          python run_analysis.py > /tmp/asc-rebuild.log
+          sha256sum results/summary.json > /tmp/asc-summary-second.sha256
+          cmp /tmp/asc-summary-first.sha256 /tmp/asc-summary-second.sha256

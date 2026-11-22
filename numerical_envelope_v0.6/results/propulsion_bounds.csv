@@ -1,0 +1,4 @@
+scenario,thrust_N
+baseline_photon,0.00033356409519815205
+sector_20kW_photon,6.671281903963041e-05
+hybrid_jet,6.354381975496219

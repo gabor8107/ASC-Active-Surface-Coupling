@@ -1,0 +1,4 @@
+calculation,return_loss_positive_dB,accepted_power_fraction,accepted_power_W,reflected_power_W,note
+reflection_at_defined_reference_plane,5,0.683772,683.772,316.228,Reflected power is not necessarily heat; cannot infer coupling efficiency
+reflection_at_defined_reference_plane,10,0.9,900.0,100.0,Reflected power is not necessarily heat; cannot infer coupling efficiency
+reflection_at_defined_reference_plane,20,0.99,990.0,10.0,Reflected power is not necessarily heat; cannot infer coupling efficiency

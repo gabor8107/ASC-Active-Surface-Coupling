@@ -1,8 +1,11 @@
 cff-version: 1.2.0
-message: "Please cite the ASC S1 numerical package as a preliminary computational release; do not cite as experimental validation."
-title: "ASC S1: Public Research Package"
-version: "0.2.2"
+message: "If you use the public engineering note, please cite this repository release and the accompanying preprint."
 authors:
-  - name: "P. Gabor"
-type: software
-abstract: "Preliminary and illustrative numerical materials accompanying ASC Preprint 0.2: a 1-D cantilever FEM benchmark and separate normalized synthetic demonstrations. No physical validation or propulsion result."
+  - family-names: Gabor
+    given-names: P.
+title: "ASC: Public Engineering Research and Numerical Propulsion Bounds (v0.6)"
+version: 0.6.0
+date-released: 2026-11-22
+url: "https://github.com/gabor8107/ASC-Active-Surface-Coupling"
+repository-code: "https://github.com/gabor8107/ASC-Active-Surface-Coupling"
+abstract: "Public hypothetical numerical benchmarks for momentum transfer, sector power budgets and electric-propulsion constraints. No ASC propulsion validation."

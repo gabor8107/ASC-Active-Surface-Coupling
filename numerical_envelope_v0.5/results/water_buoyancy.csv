@@ -1,0 +1,7 @@
+sealed_displacement_fraction,medium,displaced_m3,weight_N,buoyancy_N,net_upward_N,neutral_ballast_kg
+0.3,freshwater,0.058905,160.454,576.504,416.05,42.425
+0.3,seawater,0.058905,160.454,592.101,431.647,44.016
+0.65,freshwater,0.127627,160.454,1249.092,1088.638,111.01
+0.65,seawater,0.127627,160.454,1282.885,1122.431,114.456
+1.0,freshwater,0.19635,160.454,1921.68,1761.226,179.595
+1.0,seawater,0.19635,160.454,1973.67,1813.216,184.897

@@ -1,0 +1,4 @@
+input_W,useful_mechanical_or_wave_W,locally_dissipated_W,net_radiation_only_surface_temperature_C,energy_balance_residual_W
+100,29.75,70.25,37.08,0.0
+500,148.75,351.25,86.73,0.0
+1000,297.5,702.5,129.03,0.0

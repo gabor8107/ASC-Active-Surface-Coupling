@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Please cite as an unreviewed public computational supplement; not as evidence of ASC propulsion."
+title: "ASC: Public Numerical Engineering Envelope — Hypothetical Scenario Benchmarks"
+version: "0.5.0"
+date-released: "2026-11-22"
+authors:
+  - name: "P. Gabor"
+type: software
+abstract: "Reproducible first-principles scenario screens for air, water, vacuum, mass, phase, RF, thermals and a public bare-beam reference. No integrated system simulation, calibrated measurement or ASC propulsion claim."

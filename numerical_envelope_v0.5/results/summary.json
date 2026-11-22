@@ -1,0 +1,45 @@
+{
+  "project": "ASC public computational envelope v0.4",
+  "publication_status": "Numerical hypothetical scenarios only; NOT ASC device simulation or experimental validation",
+  "configuration_sha256": "5a85174f722184e707542032768b7f17ceed385ae3f98f67d553894b3c46de8c",
+  "scenario": {
+    "diameter_m": 1.0,
+    "height_m": 0.25,
+    "proxy_mass_kg": 16.36172512351933,
+    "no_use_of_confidential_inputs": true
+  },
+  "results": {
+    "shell_mass_kg": 6.3617251235193315,
+    "weight_N": 160.45371168256085,
+    "minimum_ideal_air_hover_power_W": 1465.199186545477,
+    "assumed_FM_air_hover_power_W": 2441.998644242462,
+    "seawater_pressure_force_at_10m_one_face_N": 78946.78,
+    "electric_thruster_1000W_1500s_thrust_mN": 61.183,
+    "phase_MC_sigma_0_3_mean": 0.957742,
+    "sensitivity_envelopes": {
+      "hover_power_W": {
+        "p05": 1507.3371218741336,
+        "median": 2965.7748732040973,
+        "p95": 5406.896102564332
+      },
+      "water_edge_motion_power_W": {
+        "p05": 427.8710743705762,
+        "median": 1133.8689474146945,
+        "p95": 2312.983155780821
+      },
+      "inputs": "Independent uniform hypothetical parameter sweeps: not physical uncertainty distributions"
+    }
+  },
+  "validity": "All numerical outputs are conditional on public hypothetical input values. No propulsive performance is attributed to ASC.",
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "matplotlib": "3.10.8"
+  },
+  "methodology_reference_links": [
+    "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/drag-equation/",
+    "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/rocket-thrust-equation/",
+    "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/specific-impulse/",
+    "https://www.nasa.gov/smallsat-institute/sst-soa/in-space_propulsion/"
+  ]
+}

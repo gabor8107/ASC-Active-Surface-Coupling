@@ -1,0 +1,197 @@
+{
+  "classification": "PUBLIC / HYPOTHETICAL SURROGATE PARAMETERS \u2014 NOT ASC DESIGN DATA",
+  "version": "0.4.0",
+  "units": "SI unless explicitly shown",
+  "geometry": {
+    "diameter_m": 1.0,
+    "envelope_height_m": 0.25,
+    "equivalent_shell_thickness_m": 0.001,
+    "shell_density_kg_m3": 2700.0,
+    "frame_mass_kg": 4.0,
+    "controls_mass_kg": 2.0,
+    "sensors_mass_kg": 1.0,
+    "energy_storage_mass_kg": 3.0
+  },
+  "environment": {
+    "air_density_kg_m3": 1.225,
+    "freshwater_density_kg_m3": 998.0,
+    "seawater_density_kg_m3": 1025.0,
+    "gravity_m_s2": 9.80665,
+    "radiation_constant_W_m2_K4": 5.670374419e-08,
+    "radiation_background_temperature_K": 293.15,
+    "solar_flux_1au_W_m2": 1361.0,
+    "light_speed_m_s": 299792458.0
+  },
+  "aerodynamics": {
+    "edge_projected_area": "diameter times envelope height",
+    "face_projected_area": "pi times radius squared",
+    "air_cd_sweep": [
+      0.2,
+      0.6,
+      1.0
+    ],
+    "air_speeds_m_s": [
+      5.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "propulsive_efficiency_assumption": 0.65,
+    "ideal_actuator_disk_figure_of_merit": 0.6,
+    "comparison_electrical_powers_W": [
+      200,
+      500,
+      1000,
+      3000
+    ]
+  },
+  "hydrodynamics": {
+    "water_cd_sweep": [
+      0.2,
+      0.6,
+      1.0
+    ],
+    "water_speeds_m_s": [
+      0.5,
+      1,
+      2,
+      3
+    ],
+    "total_propulsive_efficiency_assumption": 0.5,
+    "depths_m": [
+      1,
+      10,
+      50
+    ],
+    "displaced_envelope_fractions": [
+      0.3,
+      0.65,
+      1.0
+    ],
+    "illustrative_jet_velocity_change_m_s": [
+      1,
+      3,
+      5
+    ]
+  },
+  "electric_propulsion": {
+    "electric_powers_W": [
+      100,
+      500,
+      1000,
+      3000
+    ],
+    "specific_impulses_s": [
+      500,
+      1500,
+      3000
+    ],
+    "power_to_jet_kinetic_fraction": 0.45,
+    "illustrative_propellant_mass_kg": 0.5,
+    "battery_specific_energy_Wh_kg": 200,
+    "solar_cell_efficiency_1au": 0.25
+  },
+  "thermal": {
+    "electrical_input_W": [
+      100,
+      500,
+      1000
+    ],
+    "distribution_efficiency": 0.85,
+    "mechanical_conversion_efficiency": 0.35,
+    "effective_radiating_area_fraction": 0.35,
+    "emissivity": 0.8
+  },
+  "beam_public_v03": {
+    "length_m": 0.12,
+    "width_m": 0.015,
+    "thickness_m": 0.001,
+    "E_Pa": 70000000000.0,
+    "density_kg_m3": 2700.0,
+    "tip_force_N": [
+      0.005,
+      0.01,
+      0.02
+    ]
+  },
+  "phase": {
+    "channels": 24,
+    "azimuthal_order": 3,
+    "phase_std_rad": [
+      0,
+      0.1,
+      0.3,
+      0.6,
+      1.0
+    ],
+    "randomized_trials": 20000,
+    "seed": 20261122,
+    "clock_frequencies_hz": [
+      1000,
+      10000,
+      100000,
+      1000000
+    ],
+    "phase_error_degree_limits": [
+      1,
+      5,
+      10
+    ]
+  },
+  "uncertainty_envelope": {
+    "sample_count": 20000,
+    "seed": 124512,
+    "mass_uniform_kg": [
+      12,
+      25
+    ],
+    "diameter_uniform_m": [
+      0.7,
+      1.3
+    ],
+    "hover_efficiency_uniform": [
+      0.45,
+      0.75
+    ],
+    "water_Cd_uniform": [
+      0.2,
+      1.0
+    ],
+    "water_speed_m_s": 2,
+    "water_efficiency_uniform": [
+      0.35,
+      0.7
+    ]
+  },
+  "waves": {
+    "hypothetical_phase_velocities_m_s": [
+      1000,
+      3000
+    ],
+    "frequency_sweep_hz": [
+      10000,
+      100000,
+      1000000
+    ],
+    "reference_circumference": "pi*surrogate_diameter",
+    "illustrative_samples_per_wavelength": 2
+  },
+  "rf_bookkeeping": {
+    "input_W": 1000,
+    "hypothetical_return_loss_dB": [
+      5,
+      10,
+      20
+    ],
+    "channel_count": 24,
+    "wire_resistance_ohm_each": [
+      0.05,
+      0.2
+    ],
+    "channel_current_A": [
+      0.1,
+      1,
+      5
+    ]
+  }
+}

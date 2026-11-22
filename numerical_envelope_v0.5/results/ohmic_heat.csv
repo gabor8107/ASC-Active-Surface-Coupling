@@ -1,0 +1,7 @@
+channels_hypothetical,current_per_channel_A,equivalent_resistance_ohm_each,total_ohmic_W,note
+24,0.1,0.05,0.012,Assumes one equivalent resistive path per channel; not actual ASC wiring
+24,1,0.05,1.2,Assumes one equivalent resistive path per channel; not actual ASC wiring
+24,5,0.05,30.0,Assumes one equivalent resistive path per channel; not actual ASC wiring
+24,0.1,0.2,0.048,Assumes one equivalent resistive path per channel; not actual ASC wiring
+24,1,0.2,4.8,Assumes one equivalent resistive path per channel; not actual ASC wiring
+24,5,0.2,120.0,Assumes one equivalent resistive path per channel; not actual ASC wiring

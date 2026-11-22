@@ -1,0 +1,4 @@
+tip_load_N,bare_cantilever_first_mode_hz,tip_displacement_mm_linear_model,max_root_bending_stress_MPa_linear_model,relative_tip_displacement_to_length
+0.005,57.119567,0.03291,0.24,0.00027429
+0.01,57.119567,0.06583,0.48,0.00054857
+0.02,57.119567,0.13166,0.96,0.00109714

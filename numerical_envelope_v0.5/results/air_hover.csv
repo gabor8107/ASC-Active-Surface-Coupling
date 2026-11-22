@@ -1,0 +1,5 @@
+assumed_electric_input_W,weight_N,required_thrust_to_power_N_per_W,ideal_actuator_disk_induced_power_W,induced_power_with_assumed_FM_W,power_sufficient_under_FM_scenario
+200,160.4537,0.802269,1465.199,2441.999,False
+500,160.4537,0.320907,1465.199,2441.999,False
+1000,160.4537,0.160454,1465.199,2441.999,False
+3000,160.4537,0.053485,1465.199,2441.999,True

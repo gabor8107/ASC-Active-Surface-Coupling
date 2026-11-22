@@ -1,0 +1,9 @@
+quantity,value_SI
+radius_m,0.5
+face_area_m2,0.78539816
+side_projected_area_m2,0.25
+skin_area_m2,2.35619449
+ideal_cylindrical_envelope_m3,0.19634954
+proxy_skin_mass_kg,6.36172512
+additions_mass_kg,10.0
+total_proxy_mass_kg,16.36172512

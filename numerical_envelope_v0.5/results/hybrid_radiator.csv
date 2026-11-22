@@ -1,0 +1,4 @@
+radiator_temperature_K,baseline_heat_only_m2,heat_only_after_TEG_m2,note
+300,115.265,109.502,"Radiative-only, one-sided effective area; cannot establish actual TEG cold-side and cooling design"
+350,62.217,59.106,"Radiative-only, one-sided effective area; cannot establish actual TEG cold-side and cooling design"
+400,36.471,34.647,"Radiative-only, one-sided effective area; cannot establish actual TEG cold-side and cooling design"

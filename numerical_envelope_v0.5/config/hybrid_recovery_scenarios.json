@@ -1,0 +1,21 @@
+{
+  "classification": "PUBLIC / HYPOTHETICAL ANALYTICAL BENCHMARK - NOT ASC PERFORMANCE OR PRIVATE DESIGN DATA",
+  "version": "0.5.0",
+  "boundary": "100 kW process gross electric input; mutually exclusive illustrative output bins; RF not already recaptured upstream; 100 kW/100 kg are independent toy proxies and do not represent an ASC vehicle",
+  "gross_electric_W": 100000,
+  "fractions": {"useful": 0.45, "heat": 0.45, "rf_reflection_or_other_uncaptured": 0.07, "unwanted_mechanical": 0.03},
+  "illustrative_capture": {"heat_electric": 0.05, "rf_electric": 0.30, "mechanical_electric": 0.10, "rf_available": 1.0},
+  "thermal_reservoirs_K": {"hot": 400.0, "cold": 300.0, "space": 3.0},
+  "system_tradeoffs": {"auxiliary_external_W": 350.0, "useful_process_penalty_fraction_of_gross": 0.006, "added_recovery_mass_kg": 8.0, "baseline_mass_proxy_kg": 100.0},
+  "radiator": {"emissivity": 0.85, "temperatures_K": [300, 350, 400]},
+  "illustrative_sensitivity": {
+    "samples": 15000, "seed": 20261122,
+    "hot_K": [350, 500], "cold_K": [290, 330],
+    "fraction_of_Carnot_realized": [0.08, 0.28],
+    "rf_capture_frac": [0.05, 0.6], "rf_available_frac": [0, 1],
+    "vibration_capture_frac": [0.02, 0.25],
+    "aux_W": [150, 850],
+    "process_penalty_frac": [0, 0.024],
+    "extra_mass_kg": [2, 20]
+  }
+}

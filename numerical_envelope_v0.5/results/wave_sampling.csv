@@ -1,0 +1,7 @@
+assumed_phase_velocity_m_s,frequency_hz,wavelength_mm,simple_two_samples_pitch_mm,perimeter_positions_heuristic,note
+1000,10000,100.0,50.0,63,Not the number of control sectors or an actual transducer design
+1000,100000,10.0,5.0,629,Not the number of control sectors or an actual transducer design
+1000,1000000,1.0,0.5,6284,Not the number of control sectors or an actual transducer design
+3000,10000,300.0,150.0,21,Not the number of control sectors or an actual transducer design
+3000,100000,30.0,15.0,210,Not the number of control sectors or an actual transducer design
+3000,1000000,3.0,1.5,2095,Not the number of control sectors or an actual transducer design

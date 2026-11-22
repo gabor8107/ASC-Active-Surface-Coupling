@@ -1,71 +1,105 @@
-# ASC S1 — Public Research Package v0.2.2 (release candidate)
+# ASC - Active Surface Coupling
 
-**Active Surface Coupling (ASC): preliminary numerical benchmarks and measurement-planning resources**  
-**Concept author:** P. Gabor · Independent researcher, Hungary  
-**Prepared:** 20 November 2026 · **Companion to ASC Preprint 0.2**  
-**Release status:** PUBLICATION CANDIDATE — author approval, IP review, license decision and final archive check outstanding.
+**Public engineering research release v0.6** | 22 November 2026  
+**Concept and research programme:** P. Gabor | Independent researcher, Hungary
 
-> **Scope and evidence boundary.** The repository contains architectural discussion, a **hypothetical** one-dimensional beam FEM benchmark and **synthetic** mathematical demonstrations. It contains **no ASC hardware measurements or experimentally validated system model**. No thrust, propulsion effect, coupling advantage, RF efficiency or vehicle performance is claimed. ASC is **separate from the author's QRUM research programme**.
+ASC is an independent proposal to investigate distributed active surfaces, controlled wave patterns and modular systems engineering. Its long-term drawings use a disc-shaped platform as a visual reference. The actual research begins with small, measurable experiments, ordinary conservation laws and comparisons with simpler designs.
 
-## What is inside
+This repository contains the 28-page public architecture preprint, three conceptual drawings, the earlier v0.5 numerical benchmarks and a new v0.6 numerical study of external momentum transfer, power allocation, sector faults, thermal loads and ideal electric-propulsion missions.
 
-| Path | Content | Evidentiary status |
-| --- | --- | --- |
-| `preprint/ASC_Preprint_0.2_Full_Public_Summary_28p.pdf` | Revised complete 28-page English ASC Preprint 0.2: corrected ASC-003 on page 8, plain-English disclosure on page 27 and GitHub numerical note on page 2 | **Concept / proposal**, not validation |
-| `drawings/` | Three separately supplied conceptual PNG images, ASC-001 to ASC-003, matching Figures 1–3 on pages 6–8 of the preprint | **AI-assisted visual studies**, not verified drawings |
-| `preprint/ASC_S1_Overview_2p.pdf` | Two-page S1-oriented summary previously packaged as a Preprint 0.2 PDF; preserved separately to avoid confusing it with the full 28-page paper | Companion overview; **not the full preprint** |
-| `engineering_fem/` | Executable 1-D Euler–Bernoulli composite cantilever benchmark; `run_fem.py`, config, unit tests, CSVs, plots and six-page technical note | Numerical example with deliberately **illustrative** dimensions and materials |
-| `synthetic_demo/` | Reproducible normalized damped-oscillator comparison and idealized 24-channel phasor-coherence Monte Carlo | **Synthetic**, dimensionless tests of analysis/plotting workflow; **not FEM** |
-| `REPRODUCIBILITY.md` | Verification checks, numerical tolerances, and rerun instructions | Computing transparency, not laboratory validation |
-| `PREPUBLICATION_CHECKLIST.md` | Decisions to close before a public release | Editorial and IP checks |
+**No ASC propulsion device has been constructed or validated. No net thrust, useful coupling gain or flight capability is claimed.** The calculations use disclosed hypothetical values, not confidential ASC design information. The public models do not reproduce a coupled active surface/plasma engine.
 
-**Do not mix the results of the two numerical folders.** The FEM calculates low-frequency *cantilever bending* under assumed geometry, elastic properties, bonding and voltage. The synthetic demo uses arbitrary normalized frequency and independent random phase errors. Neither computes high-frequency SAW fields, 2-D/3-D shell behavior or propulsion.
+## Begin here
 
-## What S1 means here
+1. [Public engineering report v0.6](numerical_envelope_v0.6/docs/ASC_Public_Engineering_Research_v0.6_EN.pdf) - the complete current calculation note (21 pages, including ASC-001/002/003).
+2. [ASC architecture preprint 0.2](preprint/ASC_Preprint_0.2_Public_Release_EN_ASC001-003.pdf) - the original 28-page public research programme.
+3. [v0.6 assumptions](numerical_envelope_v0.6/config/scenarios.json), [physics source](numerical_envelope_v0.6/src/asc_physics.py), [results](numerical_envelope_v0.6/results/summary_v06.json) and [tests](numerical_envelope_v0.6/tests/test_v06.py).
+4. [v0.5 numerical baseline](numerical_envelope_v0.5/) - preserved independently for comparison; it has a different energy boundary.
 
-The **full 28-page preprint** defines S1 broadly as a *flat-specimen measurement and verification stage*: it calls for calibrated displacement/phase measurements, repeatability checks and comparison against a direct-drive reference. The present FEM beam is **one preliminary numerical exercise that may help plan part of S1**, not the specified or experimentally validated ASC specimen. The two-page overview narrows the discussion to that example; it does not supersede the full preprint's scope.
+## The physical question
 
-## Quick start
+A segmented active surface cannot, by itself, generate net thrust in a closed system in vacuum. A spacecraft must expel matter or radiation to exchange momentum. This public supplement therefore separates:
 
-Python 3.10+ is recommended. Run the FEM package first:
+- **Internal wave / piezo / RF control:** electrical and mechanical redistribution, with no assigned vacuum thrust.
+- **Radiation leaving the vehicle:** photon recoil bounded by `P_out/c`.
+- **An actual propellant jet:** conditional `F = 2 eta P_jet / (Isp g0)` after allowing for the electrical budget and emission direction.
+- **Recovery of electrical power:** a reduction in source demand only when the recovered power is not counted twice, is available at the bus and exceeds the added losses.
+
+The v0.6 calculation uses **24 conceptual supervisory sectors and 12 illustrative addresses per sector (288 total)**. This is an intentionally simplified counting model, **not** a release of ASC hardware cell density, electrode layout or an established engine architecture.
+
+## Representative results (model assumptions, not measured ASC performance)
+
+At 100 kW external input, 1500 s assumed Isp and 45% jet kinetic efficiency, a conventional ideal propellant-jet comparison gives **6.118 N**. If 20 kW of the same source is allocated to the active surface, with 4.65% recovery of that branch and 350 W auxiliary draw, **80.58 kW** remains for the jet. The integrated jet would need at least **55.85% efficiency** to break even on aligned thrust against the 45% conventional reference. An assumed 58%-efficient jet yields **6.354 N**, but the ASC surface is **not known** to produce such a gain.
+
+At 100 kW of perfectly directed outward radiation, the recoil limit is about **0.334 mN**. The report also includes thrust-vector cancellations, lost-sector moments, heat rejection, the ideal rocket equation, and solar/battery sizing diagnostics. A theoretical delta-v scenario is not an ASC velocity rating or maximum.
+
+For complete numerical values and caveats, see the PDF and CSV tables.
+
+## Reproduce the new results
+
+Python 3.10+ is recommended.
 
 ```bash
-cd engineering_fem
+cd numerical_envelope_v0.6
 python -m pip install -r requirements.txt
-python run_fem.py
+python run_v06.py
+python -m unittest discover -s tests -v
+# Optional, to rebuild the PDF:
+python -m pip install -r requirements-pdf.txt
+python make_report.py
+```
+
+To reproduce the preserved v0.5 baseline:
+
+```bash
+cd numerical_envelope_v0.5
+python -m pip install -r requirements.txt
+python run_analysis.py
+python run_hybrid_analysis.py
 python -m unittest discover -s tests -v
 ```
 
-The FEM calculations save CSV, JSON and PNG files to `engineering_fem/results/`. To run the separate synthetic demonstration:
+At preparation, **45 tests passed for v0.6 and 57 for v0.5**. These are consistency tests of equations and software, not independent experimental verification. The analysis runs locally; it makes no network requests.
 
-```bash
-cd ../synthetic_demo
-python run_simulation.py
+## Repository layout
+
+```text
+ASC-Active-Surface-Coupling/
+  README.md
+  CITATION.cff
+  CHANGELOG.md
+  PUBLISHING_AND_PRIVACY_HU.md
+  LICENSE_DECISION.md
+  preprint/
+    ASC_Preprint_0.2_Public_Release_EN_ASC001-003.pdf
+  drawings/
+    ASC-001_Full_Structure_Section.png
+    ASC-002_General_Arrangement.png
+    ASC-003_Exploded_Assembly.png
+  numerical_envelope_v0.5/        # preserved previous public benchmark
+  numerical_envelope_v0.6/
+    config/scenarios.json
+    src/asc_physics.py
+    run_v06.py
+    make_report.py
+    tests/test_v06.py
+    results/                     # seven data tables plus JSON summary
+    figures/                     # seven analysis plots
+    docs/ASC_Public_Engineering_Research_v0.6_EN.pdf
 ```
 
-See each folder's `README.md`, `engineering_fem/public_config.json`, and `REPRODUCIBILITY.md`. The test suite checks five internal properties of the mechanical code; it **does not independently validate the model against ASC experiments**.
+## Provenance and limits
 
-## Explicit non-claims
+The three concept illustrations were made with generative-AI assistance and are explanatory, not construction drawings. Computational and editorial assistance was also used to prepare the numerical supplement. All statements remain subject to independent engineering review; the calculations contain no actual measurements of ASC-V.
 
-- **No ASC prototype or laboratory data** are supplied; modeled/simulated results must not be called observed or measured.
-- **No SAW multiphysics, RF power/thermal model, or full piezoelectric field solution** is presented.
-- **No performance advantage, force, drag reduction, reactionless thrust or operational vehicle design** is demonstrated.
-- **No build-ready fabrication drawings, control firmware, real ASC operating settings or manufacturing tolerances** are supplied in this package.
-- Published generic illustrative inputs must **not** be assumed to match a future physical ASC implementation.
-- Model mesh convergence and an analytical bare-beam frequency comparison are **numerical verification**, not experimental validation.
+The project has broader unpublished documentation. **No confidential v0.3 archive, private implementation data, working frequencies, material-stack specification or manufacturing plan is included here.** Public disclosure is not patent protection: further intellectual-property review is advisable before sharing implementation detail.
 
-## AI assistance and provenance
+Public source availability does not itself grant reuse rights; see [LICENSE_DECISION.md](LICENSE_DECISION.md). The author should choose and add a software license before calling the repository open-source.
 
-The ASC concept and research direction are credited to **P. Gabor**. Example Python code, report language and visual materials were prepared with AI assistance. Numerical plots and CSVs were generated by executing the included code. AI participation does not constitute independent peer review. All scientific claims, configurations, references, and figures should receive author review before publication.
+ASC is separate from the QRUM and MRIT research programmes.
 
-## Licensing and reuse
+## Related publications
 
-**No software or data license has been selected for this release candidate.** Public access does not itself grant permission to reuse, redistribute, or modify copyrighted materials. Before describing the package as *open source*, select and include a suitable license for the code and explicitly state any separate permissions for text, figures and data. Patent/public-disclosure consequences should be reviewed **before** public posting if protection may be sought.
-
-## How to cite
-
-Refer to the **full ASC Preprint 0.2 as a concept proposal** and the numerical package separately as **ASC S1 Public Research Package v0.2.2**. No DOI is claimed in this draft. Update citation metadata with a valid Zenodo release DOI once assigned. Neither source should be cited as evidence of propulsion or an experimentally operating ASC device.
-
-## Release scope
-
-The manifest lists all distributed files **except `MANIFEST_SHA256.txt` itself**. The separate private implementation dossier (>1,000 pages, including a 1,046-page compiled edition) is not included. Nor are private electrical schematics, operating parameters, internal CAD, manufacturing tolerances or fabrication instructions. The public drawings were made with generative-AI assistance from the author's concept references and do not imply physical validation. Check the manifest and archives before publishing. GitHub and Zenodo publication must be approved by the author.
+- Zenodo: https://doi.org/10.5281/zenodo.24406624
+- Project repository: https://github.com/gabor8107/ASC-Active-Surface-Coupling
+- Research page: https://gabor8107.github.io/

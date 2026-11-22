@@ -1,0 +1,4 @@
+comparison,external_supply_W,internal_process_W,modelled_useful_W,gross_recovered_W,aux_W,process_penalty_frac
+baseline,100000,100000,45000.0,0,0,0
+hybrid_equal_useful,96988.5135,101351.3514,45000.0,4712.8378,350.0,0.006
+hybrid_equal_external,100000,104509.7011,46402.3073,4859.7011,350.0,0.006

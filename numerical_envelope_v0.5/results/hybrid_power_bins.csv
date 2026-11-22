@@ -1,0 +1,5 @@
+branch,baseline_W,capture_pct,electric_recovered_W
+Useful modelled process (not thrust),45000.0,0,0
+Thermal bin (not total thermal load),45000.0,5.0,2250.0
+RF reflection/loss bin (not already recirculated),7000.000000000001,30.0,2100.0
+Unwanted vibration bin (not useful waves),3000.0,10.0,300.0

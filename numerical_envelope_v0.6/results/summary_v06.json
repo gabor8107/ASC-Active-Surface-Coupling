@@ -1,0 +1,42 @@
+{
+  "identification": "PUBLIC HYPOTHETICAL v0.6; numerical bounds only; no physical ASC motor or flight test",
+  "baseline": {
+    "ve_m_s": 14709.974999999999,
+    "jet_kinetic_W": 45000.0,
+    "thrust_magnitude_N": 6.11829727786757,
+    "thrust_axial_N": 6.11829727786757,
+    "mass_flow_kg_s": 0.00041592846200401906,
+    "isp_s": 1500
+  },
+  "hybrid_allocation": {
+    "external_W": 100000,
+    "sector_gross_W": 20000,
+    "sector_recovered_W": 930.0,
+    "auxiliary_W": 350,
+    "jet_available_W": 80580.0,
+    "balance_residual_W": 0.0
+  },
+  "hybrid_jet_if_eta58": {
+    "ve_m_s": 14709.974999999999,
+    "jet_kinetic_W": 46736.399999999994,
+    "thrust_magnitude_N": 6.354381975496219,
+    "thrust_axial_N": 6.354381975496219,
+    "mass_flow_kg_s": 0.0004319777549245474,
+    "isp_s": 1500
+  },
+  "efficiency_required_break_even": 0.5584512285927029,
+  "baseline_radiator_heat_if_all_nonjet_energy_is_onboard_W": 55000.0,
+  "hybrid_radiator_heat_if_all_nonjet_energy_is_onboard_W": 53263.600000000006,
+  "ideal_photon_limit_100kW_N": 0.00033356409519815205,
+  "source_envelope": {
+    "ideal_1AU_illuminated_solar_area_m2": 293.9015429831007,
+    "battery_Wh_per_day": 2400000
+  },
+  "mass_adjusted_dry_only_acceleration_ratio": 1.0116103896103894,
+  "caveats": [
+    "288 identical hypothetical emission cells are not a demonstrated ASC mechanism",
+    "v0.5 4.65-kW recovery cannot be added again to this 100-kW external-power split",
+    "external photovoltaic area and stored-battery figures are simplistic diagnostics, not viable spacecraft designs",
+    "a velocity increment is not an ASC speed limit or prediction"
+  ]
+}

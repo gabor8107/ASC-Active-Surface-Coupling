@@ -1,0 +1,170 @@
+{
+  "name": "ASC public 100 kW hybrid recovery benchmark",
+  "scenario": "PUBLIC hypothetical; no ASC hardware",
+  "original_gross_W": 100000,
+  "carnot_limit": 0.25,
+  "raw": {
+    "gross_W": 100000,
+    "useful_W": 45000.0,
+    "heat_bin_W": 45000.0,
+    "rf_bin_W": 7000.000000000001,
+    "vibration_bin_W": 3000.0,
+    "heat_recovered_W": 2250.0,
+    "rf_recovered_W": 2100.0,
+    "vibration_recovered_W": 300.0,
+    "raw_recovered_W": 4650.0,
+    "recovery_frac": 0.0465,
+    "heat_to_reject_after_TEG_W": 42750.0,
+    "carnot_limit": 0.25,
+    "energy_balance_residual_W": 0.0
+  },
+  "fixed_useful": {
+    "baseline_external_W": 100000,
+    "baseline_useful_W": 45000.0,
+    "hybrid_internal_W": 101351.35135135135,
+    "hybrid_useful_W": 45000.0,
+    "hybrid_recovered_W": 4712.8378378378375,
+    "hybrid_aux_external_W": 350.0,
+    "hybrid_external_W": 96988.5135135135,
+    "external_savings_W": 3011.486486486494,
+    "relative_savings_frac": 0.030114864864864938
+  },
+  "fixed_external": {
+    "external_W": 100000,
+    "base_useful_W": 45000.0,
+    "hybrid_internal_W": 104509.70110120608,
+    "hybrid_recovered_W": 4859.701101206083,
+    "hybrid_useful_W": 46402.3072889355,
+    "delta_useful_W": 1402.3072889355026,
+    "delta_useful_pct": 3.116238419856665
+  },
+  "mass_proxy": {
+    "acceleration_ratio_hybrid_to_base": 0.9547799853690432,
+    "mass_penalty_frac": 0.08,
+    "hypothetical_acceleration_change_pct": -4.522001463095682
+  },
+  "useful_penalty_break_even_fraction": 0.019417962870045154,
+  "thermal_radiation": [
+    {
+      "radiator_temperature_K": 300,
+      "baseline_heat_only_m2": 115.265,
+      "heat_only_after_TEG_m2": 109.502,
+      "note": "Radiative-only, one-sided effective area; cannot establish actual TEG cold-side and cooling design"
+    },
+    {
+      "radiator_temperature_K": 350,
+      "baseline_heat_only_m2": 62.217,
+      "heat_only_after_TEG_m2": 59.106,
+      "note": "Radiative-only, one-sided effective area; cannot establish actual TEG cold-side and cooling design"
+    },
+    {
+      "radiator_temperature_K": 400,
+      "baseline_heat_only_m2": 36.471,
+      "heat_only_after_TEG_m2": 34.647,
+      "note": "Radiative-only, one-sided effective area; cannot establish actual TEG cold-side and cooling design"
+    }
+  ],
+  "assumption_sweep": {
+    "external_savings_kW": {
+      "p05": -2.887996131583231,
+      "median": 0.5229914448866039,
+      "p95": 4.067476170004408,
+      "minimum": -5.248369841266569,
+      "maximum": 7.767315661157394
+    },
+    "recovery_fraction": {
+      "p05": 0.017000083791099775,
+      "median": 0.03546366803692329,
+      "p95": 0.06132894119663659,
+      "minimum": 0.005711247492218722,
+      "maximum": 0.09198049608040947
+    },
+    "mass_adjusted_acceleration_ratio": {
+      "p05": 0.8358510196177009,
+      "median": 0.9050424441423477,
+      "p95": 0.9862005755226888,
+      "minimum": 0.7984176982922417,
+      "maximum": 1.0499856207009048
+    },
+    "proportion_positive_electrical_saving": 0.5890666666666666,
+    "proportion_positive_mass_adjusted_acceleration": 0.020133333333333333,
+    "interpretation": "Arbitrary independent uniform parameter sweeps; neither probability forecasts nor experimental uncertainty intervals"
+  },
+  "settings": {
+    "classification": "PUBLIC / HYPOTHETICAL ANALYTICAL BENCHMARK - NOT ASC PERFORMANCE OR PRIVATE DESIGN DATA",
+    "version": "0.5.0",
+    "boundary": "100 kW process gross electric input; mutually exclusive illustrative output bins; RF not already recaptured upstream; 100 kW/100 kg are independent toy proxies and do not represent an ASC vehicle",
+    "gross_electric_W": 100000,
+    "fractions": {
+      "useful": 0.45,
+      "heat": 0.45,
+      "rf_reflection_or_other_uncaptured": 0.07,
+      "unwanted_mechanical": 0.03
+    },
+    "illustrative_capture": {
+      "heat_electric": 0.05,
+      "rf_electric": 0.3,
+      "mechanical_electric": 0.1,
+      "rf_available": 1.0
+    },
+    "thermal_reservoirs_K": {
+      "hot": 400.0,
+      "cold": 300.0,
+      "space": 3.0
+    },
+    "system_tradeoffs": {
+      "auxiliary_external_W": 350.0,
+      "useful_process_penalty_fraction_of_gross": 0.006,
+      "added_recovery_mass_kg": 8.0,
+      "baseline_mass_proxy_kg": 100.0
+    },
+    "radiator": {
+      "emissivity": 0.85,
+      "temperatures_K": [
+        300,
+        350,
+        400
+      ]
+    },
+    "illustrative_sensitivity": {
+      "samples": 15000,
+      "seed": 20261122,
+      "hot_K": [
+        350,
+        500
+      ],
+      "cold_K": [
+        290,
+        330
+      ],
+      "fraction_of_Carnot_realized": [
+        0.08,
+        0.28
+      ],
+      "rf_capture_frac": [
+        0.05,
+        0.6
+      ],
+      "rf_available_frac": [
+        0,
+        1
+      ],
+      "vibration_capture_frac": [
+        0.02,
+        0.25
+      ],
+      "aux_W": [
+        150,
+        850
+      ],
+      "process_penalty_frac": [
+        0,
+        0.024
+      ],
+      "extra_mass_kg": [
+        2,
+        20
+      ]
+    }
+  }
+}

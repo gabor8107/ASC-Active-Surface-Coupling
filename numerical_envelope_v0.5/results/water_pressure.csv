@@ -1,0 +1,4 @@
+depth_m,gauge_pressure_kPa,one_face_resultant_N,note
+1,10.052,7894.68,gross one-face pressure resultant only; not net closed-hull force or pressure capacity
+10,100.518,78946.78,gross one-face pressure resultant only; not net closed-hull force or pressure capacity
+50,502.591,394733.9,gross one-face pressure resultant only; not net closed-hull force or pressure capacity
